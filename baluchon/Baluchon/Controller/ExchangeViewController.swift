@@ -17,6 +17,9 @@ class ExchangeViewController: UIViewController {
     @IBOutlet weak var currencyTextField: UITextField!
     @IBOutlet weak var exchangeLabel: UILabel!
     
+    @IBAction func tapBaseButton() {
+        presentAlert(message: "You cannot change the base currency, EURO only available")
+    }
     
 
     @IBOutlet var views: [UIView]!
