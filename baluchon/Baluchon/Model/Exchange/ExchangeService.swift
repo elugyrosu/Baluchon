@@ -17,7 +17,9 @@ class ExchangeService{
     private let symbolsUrl = URL(string: "http://data.fixer.io/api/symbols?access_key=12bb2b6a3892b617111ae232d072fcfb")
 
     
-    private var task: URLSessionDataTask?
+    private var exchangeTask: URLSessionDataTask?
+    private var symbolsTask: URLSessionDataTask?
+
     private var exchangeSession: URLSession
     
     
@@ -25,9 +27,9 @@ class ExchangeService{
     func getExchange(callback: @escaping (Bool, [String: Double]?) -> Void){
         //        let request = createExchangeRequest()
         guard let url = exchangeUrl else{return}
-        task?.cancel()
+        exchangeTask?.cancel()
         
-        task = exchangeSession.dataTask(with: url) { (data, response, error) in
+        exchangeTask = exchangeSession.dataTask(with: url) { (data, response, error) in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
                     callback(false, nil)
@@ -44,14 +46,14 @@ class ExchangeService{
                 callback(true, responseJSON.rates)
             }
         }
-        task?.resume()
+        exchangeTask?.resume()
     }
     func getSymbols(callback: @escaping (Bool, [String: String]?) -> Void){
         //        let request = createExchangeRequest()
         guard let url = symbolsUrl else{return}
-        task?.cancel()
+        symbolsTask?.cancel()
         
-        task = exchangeSession.dataTask(with: url) { (data, response, error) in
+        symbolsTask = exchangeSession.dataTask(with: url) { (data, response, error) in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
                     callback(false, nil)
@@ -68,7 +70,7 @@ class ExchangeService{
                 callback(true, responseJSON.symbols)
             }
         }
-        task?.resume()
+        symbolsTask?.resume()
     }
 }
 

@@ -36,7 +36,7 @@ class ExchangeViewController: UIViewController {
         super.viewDidLoad()
         addBorders()
         initializeRates()
-//        initializeSymbolsPickerView()
+        initializeSymbolsPickerView()
     }
     private func addPickerView(){
         symbolsPickerView.dataSource = self

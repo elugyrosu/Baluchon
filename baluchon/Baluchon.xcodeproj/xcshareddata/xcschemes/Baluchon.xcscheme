@@ -33,7 +33,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FFD7D9E522B3A54B00FBA008"
+               BlueprintIdentifier = "FF5CC24022B3F9650020EB40"
                BuildableName = "BaluchonTests.xctest"
                BlueprintName = "BaluchonTests"
                ReferencedContainer = "container:Baluchon.xcodeproj">
@@ -43,9 +43,29 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FFED6B2C22B3CB9A0045BC38"
-               BuildableName = "ExchangeTestCase.xctest"
-               BlueprintName = "ExchangeTestCase"
+               BlueprintIdentifier = "FF5CC24022B3F9650020EB40"
+               BuildableName = "BaluchonTests.xctest"
+               BlueprintName = "BaluchonTests"
+               ReferencedContainer = "container:Baluchon.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FFD3ED3422B3F118002E501B"
+               BuildableName = "baluchonTests.xctest"
+               BlueprintName = "baluchonTests"
+               ReferencedContainer = "container:Baluchon.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FF5CC24E22B3FA5D0020EB40"
+               BuildableName = "ExchangeTest.xctest"
+               BlueprintName = "ExchangeTest"
                ReferencedContainer = "container:Baluchon.xcodeproj">
             </BuildableReference>
          </TestableReference>
