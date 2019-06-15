@@ -20,6 +20,7 @@
 		FFD7D9FC22B3A7A500FBA008 /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD7D9FB22B3A7A500FBA008 /* ExchangeViewController.swift */; };
 		FFD7D9FE22B3A7C300FBA008 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD7D9FD22B3A7C300FBA008 /* TranslateViewController.swift */; };
 		FFD7DA0022B3A7D700FBA008 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD7D9FF22B3A7D700FBA008 /* WeatherViewController.swift */; };
+		FFDB705522B559E9004FD4A2 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDB705422B559E9004FD4A2 /* ApiKeys.swift */; };
 		FFED6B2322B3C3C30045BC38 /* PickerViewSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFED6B2122B3C3A60045BC38 /* PickerViewSymbols.swift */; };
 		FFED6B2422B3C3C80045BC38 /* ExchangeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFED6B1F22B3C37B0045BC38 /* ExchangeService.swift */; };
 		FFED6B2522B3C3CD0045BC38 /* Exchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFED6B1C22B3C3520045BC38 /* Exchange.swift */; };
@@ -49,6 +50,7 @@
 		FFD7D9FB22B3A7A500FBA008 /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
 		FFD7D9FD22B3A7C300FBA008 /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		FFD7D9FF22B3A7D700FBA008 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		FFDB705422B559E9004FD4A2 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		FFED6B1822B3C2910045BC38 /* ExchangeSymbols.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ExchangeSymbols.json; sourceTree = "<group>"; };
 		FFED6B1A22B3C31E0045BC38 /* Exchange.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Exchange.json; sourceTree = "<group>"; };
 		FFED6B1C22B3C3520045BC38 /* Exchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exchange.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				FFD7D9F522B3A6A800FBA008 /* ApiKeys.plist */,
+				FFDB705422B559E9004FD4A2 /* ApiKeys.swift */,
 				FFD7D9E122B3A54B00FBA008 /* Info.plist */,
 				FFD7D9D522B3A54A00FBA008 /* AppDelegate.swift */,
 				FFD7D9DC22B3A54B00FBA008 /* Assets.xcassets */,
@@ -278,6 +281,7 @@
 				FFD7D9FC22B3A7A500FBA008 /* ExchangeViewController.swift in Sources */,
 				FFED6B2322B3C3C30045BC38 /* PickerViewSymbols.swift in Sources */,
 				FFD7D9FE22B3A7C300FBA008 /* TranslateViewController.swift in Sources */,
+				FFDB705522B559E9004FD4A2 /* ApiKeys.swift in Sources */,
 				FFED6B2522B3C3CD0045BC38 /* Exchange.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

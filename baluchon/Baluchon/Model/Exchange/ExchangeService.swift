@@ -13,15 +13,15 @@ class ExchangeService{
     init(exchangeSession: URLSession = URLSession(configuration: .default)){
         self.exchangeSession = exchangeSession
     }
-    private let exchangeUrl = URL(string: "http://data.fixer.io/api/latest?access_key=12bb2b6a3892b617111ae232d072fcfb&base=EUR")
-    private let symbolsUrl = URL(string: "http://data.fixer.io/api/symbols?access_key=12bb2b6a3892b617111ae232d072fcfb")
+    private let exchangeUrl = URL(string: "\(fixerApiUrl)latest?access_key=\(fixerAccessKey)&base=EUR")
+    private let symbolsUrl = URL(string: "\(fixerApiUrl)symbols?access_key=\(fixerAccessKey)")
 
+    static let fixerAccessKey = valueForAPIKey(named: "fixerApiKey")
+    static let fixerApiUrl = "http://data.fixer.io/api/"
     
     private var exchangeTask: URLSessionDataTask?
     private var symbolsTask: URLSessionDataTask?
-
     private var exchangeSession: URLSession
-    
     
     
     func getExchange(callback: @escaping (Bool, [String: Double]?) -> Void){
