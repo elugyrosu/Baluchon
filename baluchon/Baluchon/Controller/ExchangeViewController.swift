@@ -28,7 +28,7 @@ class ExchangeViewController: UIViewController {
     let symbolsPickerView = UIPickerView()
     let exchangeService = ExchangeService()
     
-    var symbols = [String : String]()
+//    var symbols = [String : String]()
     var pickerViewSymbols = [String]()
     var rates = [String:Double]()
     var currency = ""
@@ -50,7 +50,6 @@ class ExchangeViewController: UIViewController {
         addPickerView()
         exchangeService.getSymbols { (success, symbols) in
             if success, let symbols = symbols{
-                self.symbols = symbols
                 for (key, value) in symbols {
                     self.pickerViewSymbols.append("\(key) \(value)")
                 }

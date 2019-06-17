@@ -13,10 +13,11 @@ class ExchangeService{
     init(exchangeSession: URLSession = URLSession(configuration: .default)){
         self.exchangeSession = exchangeSession
     }
-    private let exchangeUrl = URL(string: "\(fixerApiUrl)latest?access_key=\(fixerAccessKey)&base=EUR")
-    private let symbolsUrl = URL(string: "\(fixerApiUrl)symbols?access_key=\(fixerAccessKey)")
+    
+    private let exchangeUrl = URL(string: "\(fixerApiUrl)latest?access_key=\(ApiKeysManager.fixerApiKey)&base=EUR")
+    private let symbolsUrl = URL(string: "\(fixerApiUrl)symbols?access_key=\(ApiKeysManager.fixerApiKey)")
 
-    static let fixerAccessKey = valueForAPIKey(named: "fixerApiKey")
+    
     static let fixerApiUrl = "http://data.fixer.io/api/"
     
     private var exchangeTask: URLSessionDataTask?
@@ -63,7 +64,7 @@ class ExchangeService{
                     callback(false, nil)
                     return
                 }
-                guard let responseJSON = try? JSONDecoder().decode(PickerViewSymbols.self, from: data) else{
+                guard let responseJSON = try? JSONDecoder().decode(ExchangeSymbols.self, from: data) else{
                     callback(false, nil)
                     return
                 }

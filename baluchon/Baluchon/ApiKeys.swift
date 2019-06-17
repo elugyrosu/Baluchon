@@ -9,9 +9,19 @@
 import Foundation
 
 import Foundation
-func valueForAPIKey(named keyname:String) -> String {
-    let filePath = Bundle.main.path(forResource: "ApiKeys", ofType: "plist")
-    let plist = NSDictionary(contentsOfFile:filePath!)
-    let value = plist?.object(forKey: keyname) as! String
-    return value
+final class ApiKeysManager{
+    
+    private static var apiKeysPlist: NSDictionary = {
+        guard let path = Bundle.main.path(forResource: "ApiKeys", ofType: "plist") else{
+                fatalError("no dictionnary")
+        }
+        return NSDictionary(contentsOfFile: path) ?? [:]
+        
+    }()
+    static var fixerApiKey: String {
+        return apiKeysPlist["fixerApiKey"] as? String ?? String()
+    }
+    static var translateApiKey: String{
+        return apiKeysPlist["googleTranslateApiKey"] as? String ?? String()
+    }
 }

@@ -19,20 +19,38 @@ class TranslateViewController: UIViewController {
     @IBOutlet var views: [UIView]!
     
     let translationLanguagePickerView = UIPickerView()
-    var pickerViewTranslationSymbols = [String]()
+    let translationService = TranslationService()
+
+    var pickerViewTranslationLanguages = [String]()
     var originalLanguage = "FR"
     var translationLanguageSymbol = "EN"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addBorders()
-        addPickerView()
-        
+        initializeLanguagesPickerView()
         // Do any additional setup after loading the view.
     }
-    
+
     @IBAction func originalLanguageButtonTapped() {
         presentAlert(message: "Sorry but you cannot choose an other original language in this version")
+    }
+    private func initializeLanguagesPickerView(){
+        addPickerView()
+        translationService.getLanguages { (success, data) in
+            if success, let data = data{
+                for language in data.languages{
+                    let key = language.language
+                    let uppercaseKey = key.uppercased()
+                    let value = language.name
+                    self.pickerViewTranslationLanguages.append("\(uppercaseKey) \(value)")
+                }
+                let ordered = self.pickerViewTranslationLanguages.sorted(by: <)
+                self.pickerViewTranslationLanguages = ordered
+            }else{
+                self.presentAlert(message: "The symbols download failed.")
+            }
+        }
     }
     private func addCircularBorder(to view: UIView, with width: CGFloat){
         view.layer.cornerRadius = view.frame.height / 2
@@ -65,7 +83,7 @@ extension TranslateViewController: UITextFieldDelegate {
         translationTextView.resignFirstResponder()
         if translationLanguageTextField.resignFirstResponder(){
             let translationLanguageIndex = translationLanguagePickerView.selectedRow(inComponent: 0)
-            let completeTranslationLanguage = pickerViewTranslationSymbols[translationLanguageIndex]
+            let completeTranslationLanguage = pickerViewTranslationLanguages[translationLanguageIndex]
             if let translationLanguage = completeTranslationLanguage.components(separatedBy: " ").first{
                 self.translationLanguageSymbol = translationLanguage
                 translationLanguageTextField.text = translationLanguageSymbol
@@ -80,10 +98,10 @@ extension TranslateViewController: UIPickerViewDataSource, UIPickerViewDelegate 
         return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerViewTranslationSymbols.count
+        return pickerViewTranslationLanguages.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerViewTranslationSymbols[row]
+        return pickerViewTranslationLanguages[row]
     }
 }
 // MARK: Alerts
@@ -97,3 +115,10 @@ extension TranslateViewController {
     }
 }
 
+extension TranslateViewController: DisplayAlert { // use DisplayAlert protocol
+    func showAlert(message: String) {
+        let alertVC = UIAlertController(title: "Zéro!", message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alertVC, animated: true, completion: nil)
+    }
+}

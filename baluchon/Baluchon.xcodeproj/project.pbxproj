@@ -21,7 +21,10 @@
 		FFD7D9FE22B3A7C300FBA008 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD7D9FD22B3A7C300FBA008 /* TranslateViewController.swift */; };
 		FFD7DA0022B3A7D700FBA008 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD7D9FF22B3A7D700FBA008 /* WeatherViewController.swift */; };
 		FFDB705522B559E9004FD4A2 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDB705422B559E9004FD4A2 /* ApiKeys.swift */; };
-		FFED6B2322B3C3C30045BC38 /* PickerViewSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFED6B2122B3C3A60045BC38 /* PickerViewSymbols.swift */; };
+		FFDB705822B596CF004FD4A2 /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDB705722B596CF004FD4A2 /* Translation.swift */; };
+		FFDB705A22B5970E004FD4A2 /* TranslationSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDB705922B5970E004FD4A2 /* TranslationSymbols.swift */; };
+		FFDB705C22B599E0004FD4A2 /* TranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDB705B22B599E0004FD4A2 /* TranslationService.swift */; };
+		FFED6B2322B3C3C30045BC38 /* ExchangeSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFED6B2122B3C3A60045BC38 /* ExchangeSymbols.swift */; };
 		FFED6B2422B3C3C80045BC38 /* ExchangeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFED6B1F22B3C37B0045BC38 /* ExchangeService.swift */; };
 		FFED6B2522B3C3CD0045BC38 /* Exchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFED6B1C22B3C3520045BC38 /* Exchange.swift */; };
 /* End PBXBuildFile section */
@@ -51,11 +54,14 @@
 		FFD7D9FD22B3A7C300FBA008 /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		FFD7D9FF22B3A7D700FBA008 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		FFDB705422B559E9004FD4A2 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
+		FFDB705722B596CF004FD4A2 /* Translation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translation.swift; sourceTree = "<group>"; };
+		FFDB705922B5970E004FD4A2 /* TranslationSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationSymbols.swift; sourceTree = "<group>"; };
+		FFDB705B22B599E0004FD4A2 /* TranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationService.swift; sourceTree = "<group>"; };
 		FFED6B1822B3C2910045BC38 /* ExchangeSymbols.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ExchangeSymbols.json; sourceTree = "<group>"; };
 		FFED6B1A22B3C31E0045BC38 /* Exchange.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Exchange.json; sourceTree = "<group>"; };
 		FFED6B1C22B3C3520045BC38 /* Exchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exchange.swift; sourceTree = "<group>"; };
 		FFED6B1F22B3C37B0045BC38 /* ExchangeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeService.swift; sourceTree = "<group>"; };
-		FFED6B2122B3C3A60045BC38 /* PickerViewSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewSymbols.swift; sourceTree = "<group>"; };
+		FFED6B2122B3C3A60045BC38 /* ExchangeSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeSymbols.swift; sourceTree = "<group>"; };
 		FFED6B3922B3CC8F0045BC38 /* URLSessionFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionFake.swift; sourceTree = "<group>"; };
 		FFED6B3B22B3CCD80045BC38 /* ExchangeFakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeFakeResponseData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,9 +144,20 @@
 		FFD7D9FA22B3A72400FBA008 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FFDB705622B59678004FD4A2 /* Translation */,
 				FFED6B1E22B3C35D0045BC38 /* Exchange */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FFDB705622B59678004FD4A2 /* Translation */ = {
+			isa = PBXGroup;
+			children = (
+				FFDB705722B596CF004FD4A2 /* Translation.swift */,
+				FFDB705922B5970E004FD4A2 /* TranslationSymbols.swift */,
+				FFDB705B22B599E0004FD4A2 /* TranslationService.swift */,
+			);
+			path = Translation;
 			sourceTree = "<group>";
 		};
 		FFED6B1722B3BAB40045BC38 /* View */ = {
@@ -156,7 +173,7 @@
 			children = (
 				FFED6B1C22B3C3520045BC38 /* Exchange.swift */,
 				FFED6B1F22B3C37B0045BC38 /* ExchangeService.swift */,
-				FFED6B2122B3C3A60045BC38 /* PickerViewSymbols.swift */,
+				FFED6B2122B3C3A60045BC38 /* ExchangeSymbols.swift */,
 			);
 			path = Exchange;
 			sourceTree = "<group>";
@@ -275,11 +292,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFDB705C22B599E0004FD4A2 /* TranslationService.swift in Sources */,
 				FFD7D9D622B3A54A00FBA008 /* AppDelegate.swift in Sources */,
 				FFD7DA0022B3A7D700FBA008 /* WeatherViewController.swift in Sources */,
+				FFDB705822B596CF004FD4A2 /* Translation.swift in Sources */,
 				FFED6B2422B3C3C80045BC38 /* ExchangeService.swift in Sources */,
 				FFD7D9FC22B3A7A500FBA008 /* ExchangeViewController.swift in Sources */,
-				FFED6B2322B3C3C30045BC38 /* PickerViewSymbols.swift in Sources */,
+				FFDB705A22B5970E004FD4A2 /* TranslationSymbols.swift in Sources */,
+				FFED6B2322B3C3C30045BC38 /* ExchangeSymbols.swift in Sources */,
 				FFD7D9FE22B3A7C300FBA008 /* TranslateViewController.swift in Sources */,
 				FFDB705522B559E9004FD4A2 /* ApiKeys.swift in Sources */,
 				FFED6B2522B3C3CD0045BC38 /* Exchange.swift in Sources */,

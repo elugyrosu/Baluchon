@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct PickerViewSymbols: Decodable {
+struct ExchangeSymbols: Decodable {
     let symbols: [String: String]
 }
