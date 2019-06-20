@@ -15,6 +15,7 @@ class TranslateViewController: UIViewController {
     @IBOutlet weak var translateButton: UIButton!
     @IBOutlet weak var translationTextView: UITextView!
     @IBOutlet weak var translationLanguageTextField: UITextField!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     @IBOutlet var views: [UIView]!
     
@@ -22,18 +23,18 @@ class TranslateViewController: UIViewController {
     let translationService = TranslationService()
 
     var pickerViewTranslationLanguages = [String]()
-    var originalLanguage = "FR"
     var translationLanguageSymbol = "EN"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addBorders()
+        activityIndicatorView.isHidden = true
         initializeLanguagesPickerView()
         // Do any additional setup after loading the view.
     }
 
     @IBAction func originalLanguageButtonTapped() {
-        presentAlert(message: "Sorry but you cannot choose an other original language in this version")
+        presentAlert(message: "Sorry but you cannot choose an other language source in this version")
     }
     private func initializeLanguagesPickerView(){
         addPickerView()
@@ -73,6 +74,27 @@ class TranslateViewController: UIViewController {
         translationTextView.layer.cornerRadius = 10
         translationTextView.layer.borderWidth = 1
         translationTextView.layer.borderColor = #colorLiteral(red: 0.2297611833, green: 0.6683197618, blue: 0.7820833921, alpha: 1)
+    }
+    private func toggleActivityIndicator(shown: Bool){
+        activityIndicatorView.isHidden = shown
+        translateButton.isHidden = !shown
+    }
+    @IBAction func tappedTranslateButton() {
+        translate()
+    }
+    private func translate(){
+        toggleActivityIndicator(shown: false)
+        translationService.getTranslation(translationLanguage: translationLanguageSymbol, textToTranslate: originalLanguageTextView.text){ (success, data) in
+            self.toggleActivityIndicator(shown: true)
+            if success, let data = data{
+                for translation in data.translations{
+
+                    self.translationTextView.text = translation.translatedText
+                }
+            }else{
+                self.presentAlert(message: "The translation failed")
+            }
+        }
     }
 }
 

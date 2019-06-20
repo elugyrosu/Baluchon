@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF12DBB422B934F800F29890 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12DBB322B934F800F29890 /* WeatherService.swift */; };
 		FF5CC25222B3FA5D0020EB40 /* ExchangeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CC25122B3FA5D0020EB40 /* ExchangeTest.swift */; };
 		FF5CC25922B3FA6A0020EB40 /* ExchangeFakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFED6B3B22B3CCD80045BC38 /* ExchangeFakeResponseData.swift */; };
 		FF5CC25A22B3FA6D0020EB40 /* URLSessionFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFED6B3922B3CC8F0045BC38 /* URLSessionFake.swift */; };
@@ -20,8 +21,9 @@
 		FFD7D9FC22B3A7A500FBA008 /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD7D9FB22B3A7A500FBA008 /* ExchangeViewController.swift */; };
 		FFD7D9FE22B3A7C300FBA008 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD7D9FD22B3A7C300FBA008 /* TranslateViewController.swift */; };
 		FFD7DA0022B3A7D700FBA008 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD7D9FF22B3A7D700FBA008 /* WeatherViewController.swift */; };
-		FFDB705522B559E9004FD4A2 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDB705422B559E9004FD4A2 /* ApiKeys.swift */; };
-		FFDB705822B596CF004FD4A2 /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDB705722B596CF004FD4A2 /* Translation.swift */; };
+		FFD9131322BAF52F00BEAAD9 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9131222BAF52F00BEAAD9 /* WeatherData.swift */; };
+		FFDB705522B559E9004FD4A2 /* ApiKeysManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDB705422B559E9004FD4A2 /* ApiKeysManager.swift */; };
+		FFDB705822B596CF004FD4A2 /* TranslationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDB705722B596CF004FD4A2 /* TranslationData.swift */; };
 		FFDB705A22B5970E004FD4A2 /* TranslationSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDB705922B5970E004FD4A2 /* TranslationSymbols.swift */; };
 		FFDB705C22B599E0004FD4A2 /* TranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDB705B22B599E0004FD4A2 /* TranslationService.swift */; };
 		FFED6B2322B3C3C30045BC38 /* ExchangeSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFED6B2122B3C3A60045BC38 /* ExchangeSymbols.swift */; };
@@ -40,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FF12DBB322B934F800F29890 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		FF5CC24F22B3FA5D0020EB40 /* ExchangeTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExchangeTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF5CC25122B3FA5D0020EB40 /* ExchangeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeTest.swift; sourceTree = "<group>"; };
 		FF5CC25322B3FA5D0020EB40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,8 +56,9 @@
 		FFD7D9FB22B3A7A500FBA008 /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
 		FFD7D9FD22B3A7C300FBA008 /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		FFD7D9FF22B3A7D700FBA008 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
-		FFDB705422B559E9004FD4A2 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
-		FFDB705722B596CF004FD4A2 /* Translation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translation.swift; sourceTree = "<group>"; };
+		FFD9131222BAF52F00BEAAD9 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		FFDB705422B559E9004FD4A2 /* ApiKeysManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeysManager.swift; sourceTree = "<group>"; };
+		FFDB705722B596CF004FD4A2 /* TranslationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationData.swift; sourceTree = "<group>"; };
 		FFDB705922B5970E004FD4A2 /* TranslationSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationSymbols.swift; sourceTree = "<group>"; };
 		FFDB705B22B599E0004FD4A2 /* TranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationService.swift; sourceTree = "<group>"; };
 		FFED6B1822B3C2910045BC38 /* ExchangeSymbols.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ExchangeSymbols.json; sourceTree = "<group>"; };
@@ -84,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF12DBB222B9047C00F29890 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				FF12DBB322B934F800F29890 /* WeatherService.swift */,
+				FFD9131222BAF52F00BEAAD9 /* WeatherData.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
 		FF5CC25022B3FA5D0020EB40 /* ExchangeTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,7 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				FFD7D9F522B3A6A800FBA008 /* ApiKeys.plist */,
-				FFDB705422B559E9004FD4A2 /* ApiKeys.swift */,
+				FFDB705422B559E9004FD4A2 /* ApiKeysManager.swift */,
 				FFD7D9E122B3A54B00FBA008 /* Info.plist */,
 				FFD7D9D522B3A54A00FBA008 /* AppDelegate.swift */,
 				FFD7D9DC22B3A54B00FBA008 /* Assets.xcassets */,
@@ -144,6 +157,7 @@
 		FFD7D9FA22B3A72400FBA008 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FF12DBB222B9047C00F29890 /* Weather */,
 				FFDB705622B59678004FD4A2 /* Translation */,
 				FFED6B1E22B3C35D0045BC38 /* Exchange */,
 			);
@@ -153,7 +167,7 @@
 		FFDB705622B59678004FD4A2 /* Translation */ = {
 			isa = PBXGroup;
 			children = (
-				FFDB705722B596CF004FD4A2 /* Translation.swift */,
+				FFDB705722B596CF004FD4A2 /* TranslationData.swift */,
 				FFDB705922B5970E004FD4A2 /* TranslationSymbols.swift */,
 				FFDB705B22B599E0004FD4A2 /* TranslationService.swift */,
 			);
@@ -295,14 +309,16 @@
 				FFDB705C22B599E0004FD4A2 /* TranslationService.swift in Sources */,
 				FFD7D9D622B3A54A00FBA008 /* AppDelegate.swift in Sources */,
 				FFD7DA0022B3A7D700FBA008 /* WeatherViewController.swift in Sources */,
-				FFDB705822B596CF004FD4A2 /* Translation.swift in Sources */,
+				FFDB705822B596CF004FD4A2 /* TranslationData.swift in Sources */,
+				FF12DBB422B934F800F29890 /* WeatherService.swift in Sources */,
 				FFED6B2422B3C3C80045BC38 /* ExchangeService.swift in Sources */,
 				FFD7D9FC22B3A7A500FBA008 /* ExchangeViewController.swift in Sources */,
 				FFDB705A22B5970E004FD4A2 /* TranslationSymbols.swift in Sources */,
 				FFED6B2322B3C3C30045BC38 /* ExchangeSymbols.swift in Sources */,
 				FFD7D9FE22B3A7C300FBA008 /* TranslateViewController.swift in Sources */,
-				FFDB705522B559E9004FD4A2 /* ApiKeys.swift in Sources */,
+				FFDB705522B559E9004FD4A2 /* ApiKeysManager.swift in Sources */,
 				FFED6B2522B3C3CD0045BC38 /* Exchange.swift in Sources */,
+				FFD9131322BAF52F00BEAAD9 /* WeatherData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

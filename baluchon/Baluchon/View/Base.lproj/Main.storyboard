@@ -74,11 +74,10 @@
                                                     <constraint firstItem="Rfr-Sv-D7B" firstAttribute="height" secondItem="Ivl-z6-MK8" secondAttribute="height" id="HpQ-1n-dVY"/>
                                                 </constraints>
                                             </stackView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2Lf-Er-TNq">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tappez votre texte" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2Lf-Er-TNq">
                                                 <rect key="frame" x="75" y="0.0" width="215" height="145.5"/>
                                                 <color key="backgroundColor" red="0.2297611833" green="0.66831976179999997" blue="0.7820833921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -106,6 +105,9 @@
                                                 <state key="normal" title="TRANSLATE">
                                                     <color key="titleColor" red="0.2297611833" green="0.66831976179999997" blue="0.7820833921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="tappedTranslateButton" destination="kGD-Np-gxj" eventType="touchUpInside" id="I8A-Tz-usr"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jso-l6-AcC">
                                                 <rect key="frame" x="205" y="0.0" width="85" height="120"/>
@@ -126,7 +128,6 @@
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qIE-1z-8rV">
                                                 <rect key="frame" x="0.0" y="0.0" width="215" height="145.5"/>
                                                 <color key="backgroundColor" red="0.2297611833" green="0.66831976179999997" blue="0.7820833921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -167,11 +168,20 @@
                                     <constraint firstItem="K4i-D0-h0t" firstAttribute="height" secondItem="J7d-i0-RaS" secondAttribute="height" id="fGL-zf-IYk"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="xMN-RP-x0N">
+                                <rect key="frame" x="135" y="244.5" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="g0F-kd-M7D"/>
+                                    <constraint firstAttribute="height" constant="50" id="g5K-C3-ggH"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="gGb-tT-Xcq" firstAttribute="bottom" secondItem="ASv-EV-EH4" secondAttribute="bottom" constant="15" id="299-Cm-1Ps"/>
+                            <constraint firstItem="xMN-RP-x0N" firstAttribute="centerY" secondItem="ASv-EV-EH4" secondAttribute="centerY" id="5aP-nc-Nu9"/>
+                            <constraint firstItem="xMN-RP-x0N" firstAttribute="centerX" secondItem="ZTo-Zg-PjV" secondAttribute="centerX" id="JgV-o4-jCm"/>
                             <constraint firstItem="gGb-tT-Xcq" firstAttribute="trailing" secondItem="ASv-EV-EH4" secondAttribute="trailing" constant="15" id="V0x-Ir-F8J"/>
                             <constraint firstItem="ASv-EV-EH4" firstAttribute="top" secondItem="gGb-tT-Xcq" secondAttribute="top" constant="15" id="XkM-UH-vKT"/>
                             <constraint firstItem="ASv-EV-EH4" firstAttribute="leading" secondItem="gGb-tT-Xcq" secondAttribute="leading" constant="15" id="tCq-jC-G1K"/>
@@ -185,6 +195,7 @@
                         <color key="badgeColor" red="0.2297611833" green="0.66831976179999997" blue="0.7820833921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="xMN-RP-x0N" id="1pf-xH-NSd"/>
                         <outlet property="originalLanguageButtonView" destination="Icp-Yq-zFJ" id="Riv-NQ-wnD"/>
                         <outlet property="originalLanguageTextView" destination="2Lf-Er-TNq" id="ucQ-DI-Gnn"/>
                         <outlet property="translateButton" destination="suE-ZR-CIQ" id="gd2-1I-GrB"/>
@@ -211,7 +222,45 @@
                     <view key="view" contentMode="scaleToFill" id="C5t-T8-uhD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UL4-1M-7W0">
+                                <rect key="frame" x="15" y="35" width="290" height="469"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wg7-az-SPi">
+                                        <rect key="frame" x="0.0" y="0.0" width="290" height="234.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nTB-7d-nkh">
+                                                <rect key="frame" x="0.0" y="0.0" width="290" height="234.5"/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5or-v1-IHT">
+                                                <rect key="frame" x="290" y="0.0" width="0.0" height="234.5"/>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dBd-H1-lHA">
+                                        <rect key="frame" x="0.0" y="234.5" width="290" height="234.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qrd-Ho-KMv">
+                                                <rect key="frame" x="0.0" y="0.0" width="290" height="234.5"/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="W96-GO-hpV">
+                                                <rect key="frame" x="290" y="0.0" width="0.0" height="234.5"/>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="dBd-H1-lHA" firstAttribute="height" secondItem="Wg7-az-SPi" secondAttribute="height" id="h3e-iQ-6Wr"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UL4-1M-7W0" firstAttribute="leading" secondItem="6Wl-8R-hpw" secondAttribute="leading" constant="15" id="2Pb-kW-CfK"/>
+                            <constraint firstItem="UL4-1M-7W0" firstAttribute="top" secondItem="6Wl-8R-hpw" secondAttribute="top" constant="15" id="RHr-Nj-f7M"/>
+                            <constraint firstItem="6Wl-8R-hpw" firstAttribute="trailing" secondItem="UL4-1M-7W0" secondAttribute="trailing" constant="15" id="uUH-2U-NWh"/>
+                            <constraint firstItem="6Wl-8R-hpw" firstAttribute="bottom" secondItem="UL4-1M-7W0" secondAttribute="bottom" constant="15" id="xBS-dV-ifw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Wl-8R-hpw"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Weather" image="Weather" selectedImage="Weather" id="Cxy-IK-0Cs"/>
@@ -231,7 +280,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="u9e-Lp-oOQ">
                                 <rect key="frame" x="15" y="35" width="290" height="469"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="1" placeholder=" €" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8qP-qY-aYA">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="1" placeholder=" €" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8qP-qY-aYA">
                                         <rect key="frame" x="0.0" y="0.0" width="290" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

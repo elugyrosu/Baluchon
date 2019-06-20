@@ -24,4 +24,7 @@ final class ApiKeysManager{
     static var translateApiKey: String{
         return apiKeysPlist["googleTranslateApiKey"] as? String ?? String()
     }
+    static var openWeatherMapApiKey: String{
+        return apiKeysPlist["openWeatherMapApiKey"] as? String ?? String()
+    }
 }

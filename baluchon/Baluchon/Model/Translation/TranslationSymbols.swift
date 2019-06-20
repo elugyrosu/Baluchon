@@ -9,11 +9,11 @@
 import Foundation
 
 struct TranslationSymbols: Decodable {
-    let data: DataClass
+    let data: TranslateSymbolsDataClass
 }
     
     // MARK: - DataClass
-struct DataClass: Decodable {
+struct TranslateSymbolsDataClass: Decodable {
     let languages: [Language]
 }
     
