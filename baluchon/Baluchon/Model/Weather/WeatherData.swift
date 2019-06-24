@@ -9,47 +9,15 @@
 import Foundation
 
 struct WeatherData: Decodable {
+    let main: [String: Double]
     let weather: [Weather]
-    let main: Main
-    let wind: Wind
-    let clouds: Clouds
-    let name: String
-}
-
-// MARK: - Clouds
-struct Clouds: Decodable {
-    let all: Int
-}
-
-// MARK: - Main
-struct Main: Decodable {
-    let temp: Double
-    let pressure, humidity: Int
-    let tempMin: Double
-    let tempMax: Int
+    let wind: [String:Double]
     
-    enum CodingKeys: String, CodingKey {
-        case temp, pressure, humidity
-        case tempMin = "temp_min"
-        case tempMax = "temp_max"
-    }
+}
+struct Weather: Decodable{
+    let main: String
+    let description: String
+    let icon: String
 }
 
 
-// MARK: - Weather
-struct Weather: Decodable {
-    let id: Int
-    let main, weatherDescription, icon: String
-    
-    enum CodingKeys: String, CodingKey {
-        case id, main
-        case weatherDescription = "description"
-        case icon
-    }
-}
-
-// MARK: - Wind
-struct Wind: Decodable {
-    let speed: Double
-    let deg: Int
-}

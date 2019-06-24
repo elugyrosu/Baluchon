@@ -13,33 +13,35 @@ class WeatherService{
     init(weatherSession: URLSession = URLSession(configuration: .default)){
         self.weatherSession = weatherSession
     }
+
     
-    private let weatherUrl = URL(string: "\(openWeatherMapApiUrl)q=new york&units=metric&lang=fr&\(ApiKeysManager.openWeatherMapApiKey)")
-    
-    
-    static let openWeatherMapApiUrl = "api.openweathermap.org/data/2.5/weather?"
+    static let openWeatherMapApiUrl = "http://api.openweathermap.org/data/2.5/weather?"
     
     private var weatherTask: URLSessionDataTask?
     private var weatherSession: URLSession
     
     
-    func getWeather(callback: @escaping (Bool, WeatherData?) -> Void){
-        //        let request = createExchangeRequest()
-        guard let url = weatherUrl else{return}
+    func getWeather(city: String, callback: @escaping (Bool, WeatherData?) -> Void){
+        guard let url = URL(string: "\(WeatherService.openWeatherMapApiUrl)q=\(city)&units=metric&lang=fr&APPID=\(ApiKeysManager.openWeatherMapApiKey)") else{return}
+
         weatherTask?.cancel()
         
         weatherTask = weatherSession.dataTask(with: url) { (data, response, error) in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
                     callback(false, nil)
+                    print("error")
                     return
                 }
                 guard let response = response as? HTTPURLResponse, response.statusCode == 200 else{
                     callback(false, nil)
+                    print("error1")
+
                     return
                 }
                 guard let responseJSON = try? JSONDecoder().decode(WeatherData.self, from: data) else{
                     callback(false, nil)
+                    print("error2")
                     return
                 }
                 callback(true, responseJSON.self)
