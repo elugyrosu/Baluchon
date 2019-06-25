@@ -15,14 +15,14 @@ class WeatherService{
     }
 
     
-    static let openWeatherMapApiUrl = "http://api.openweathermap.org/data/2.5/weather?"
+    static let openWeatherMapApiUrl = "http://api.openweathermap.org/data/2.5/group?"
     
     private var weatherTask: URLSessionDataTask?
     private var weatherSession: URLSession
     
     
-    func getWeather(city: String, callback: @escaping (Bool, WeatherData?) -> Void){
-        guard let url = URL(string: "\(WeatherService.openWeatherMapApiUrl)q=\(city)&units=metric&lang=fr&APPID=\(ApiKeysManager.openWeatherMapApiKey)") else{return}
+    func getWeather(citysId: String, callback: @escaping (Bool, WeatherData?) -> Void){
+        guard let url = URL(string: "\(WeatherService.openWeatherMapApiUrl)id=\(citysId)&units=metric&lang=fr&APPID=\(ApiKeysManager.openWeatherMapApiKey)") else{return}
 
         weatherTask?.cancel()
         
