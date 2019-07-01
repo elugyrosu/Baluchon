@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExchangeViewController: UIViewController {
+final class ExchangeViewController: UIViewController {
     
     
     @IBOutlet weak var baseTextField: UITextField!
@@ -25,15 +25,14 @@ class ExchangeViewController: UIViewController {
     @IBOutlet var views: [UIView]!
     
     
-    let symbolsPickerView = UIPickerView()
-    let exchangeService = ExchangeService()
+    private let symbolsPickerView = UIPickerView()
+    private let exchangeService = ExchangeService()
     
-//    var symbols = [String : String]()
-    var pickerViewSymbols = [String]()
-    var rates = [String:Double]()
-    var currency = ""
-    var base: Double = 0
-    var rate: Double = 0
+    private var pickerViewSymbols = [String]()
+    private var rates = [String:Double]()
+    private var currency = ""
+    private var base: Double = 0
+    private var rate: Double = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,11 +40,13 @@ class ExchangeViewController: UIViewController {
         initializeRates()
         initializeSymbolsPickerView()
     }
+    
     private func addPickerView(){
         symbolsPickerView.dataSource = self
         symbolsPickerView.delegate = self
         currencyTextField.inputView = symbolsPickerView
     }
+    
     private func initializeSymbolsPickerView(){
         addPickerView()
         exchangeService.getSymbols { (success, symbols) in
@@ -60,16 +61,19 @@ class ExchangeViewController: UIViewController {
             }
         }
     }
+    
     private func addCircularBorder(to view: UIView, with width: CGFloat){
         view.layer.cornerRadius = view.frame.height / 2
         view.layer.borderWidth = width
         view.layer.borderColor = #colorLiteral(red: 0.2297611833, green: 0.6683197618, blue: 0.7820833921, alpha: 1)
     }
+    
     private func addBorders(){
         for view in views{
             addCircularBorder(to: view, with: 2)
         }
     }
+    
     private func initializeRates(){
         exchangeService.getExchange{ (success, exchange) in
             if success, let exchange = exchange{
@@ -91,6 +95,7 @@ class ExchangeViewController: UIViewController {
         self.rate = rate
     }
 }
+
 // MARK: - Keyboard and PickerView dismisss
 extension ExchangeViewController: UITextFieldDelegate {
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
@@ -105,6 +110,7 @@ extension ExchangeViewController: UITextFieldDelegate {
         }
     }
 }
+
 // MARK: Calculate
 extension ExchangeViewController{
     @IBAction func tappedConvertButton() {
@@ -123,17 +129,6 @@ extension ExchangeViewController{
         return rate * base
     }
 }
-// MARK: Alerts
-
-extension ExchangeViewController {
-    private func presentAlert(message: String){
-        let alertVC = UIAlertController(title: "Erreur", message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alertVC.addAction(action)
-        present(alertVC, animated: true, completion: nil)
-    }
-}
-
 
 // MARK: PickerView
 

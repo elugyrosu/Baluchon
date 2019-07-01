@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TranslateViewController: UIViewController {
+final class TranslateViewController: UIViewController {
     
     @IBOutlet weak var originalLanguageButtonView: UIButton!
     @IBOutlet weak var originalLanguageTextView: UITextView!
@@ -58,11 +58,13 @@ class TranslateViewController: UIViewController {
         view.layer.borderWidth = width
         view.layer.borderColor = #colorLiteral(red: 0.2297611833, green: 0.6683197618, blue: 0.7820833921, alpha: 1)
     }
+    
     private func addPickerView(){
         translationLanguagePickerView.dataSource = self
         translationLanguagePickerView.delegate = self
         translationLanguageTextField.inputView = translationLanguagePickerView
     }
+    
     private func addBorders(){
         for view in views{
             addCircularBorder(to: view, with: 2)
@@ -88,7 +90,6 @@ class TranslateViewController: UIViewController {
             self.toggleActivityIndicator(shown: true)
             if success, let data = data{
                 for translation in data.translations{
-
                     self.translationTextView.text = translation.translatedText
                 }
             }else{
@@ -126,21 +127,5 @@ extension TranslateViewController: UIPickerViewDataSource, UIPickerViewDelegate 
         return pickerViewTranslationLanguages[row]
     }
 }
-// MARK: Alerts
 
-extension TranslateViewController {
-    private func presentAlert(message: String){
-        let alertVC = UIAlertController(title: "Erreur", message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alertVC.addAction(action)
-        present(alertVC, animated: true, completion: nil)
-    }
-}
 
-extension TranslateViewController: DisplayAlert { // use DisplayAlert protocol
-    func showAlert(message: String) {
-        let alertVC = UIAlertController(title: "Zéro!", message: message, preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alertVC, animated: true, completion: nil)
-    }
-}

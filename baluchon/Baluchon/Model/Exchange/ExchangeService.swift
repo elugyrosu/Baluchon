@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ExchangeService{
+final class ExchangeService{
     
     init(exchangeSession: URLSession = URLSession(configuration: .default)){
         self.exchangeSession = exchangeSession

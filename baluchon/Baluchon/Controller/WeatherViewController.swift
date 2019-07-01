@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController {
+final class WeatherViewController: UIViewController {
 
     @IBOutlet weak var firstCityLabel: UILabel!
     @IBOutlet weak var firstCityTempLabel: UILabel!
@@ -28,12 +28,11 @@ class WeatherViewController: UIViewController {
     
     @IBOutlet weak var principalSlackView: UIStackView!
     @IBOutlet weak var weatherActivityIndicator: UIActivityIndicatorView!
-    let weatherService = WeatherService()
+    private let weatherService = WeatherService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeWeather()
-
         // Do any additional setup after loading the view.
     }
 
@@ -70,15 +69,5 @@ class WeatherViewController: UIViewController {
                 self.presentAlert(message: "The weather data download failed")
             }
         }
-    }
-}
-// MARK: Alerts
-
-extension WeatherViewController {
-    private func presentAlert(message: String){
-        let alertVC = UIAlertController(title: "Erreur", message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alertVC.addAction(action)
-        present(alertVC, animated: true, completion: nil)
     }
 }

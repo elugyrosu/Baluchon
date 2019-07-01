@@ -8,7 +8,7 @@
 
 import Foundation
 
-class WeatherService{
+final class WeatherService{
     
     init(weatherSession: URLSession = URLSession(configuration: .default)){
         self.weatherSession = weatherSession
