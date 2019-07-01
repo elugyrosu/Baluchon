@@ -45,7 +45,7 @@ class WeatherViewController: UIViewController {
     private func refreshViews(weatherData: WeatherData){
         self.firstCityLabel.text = weatherData.list[0].name
         self.firstCityTempLabel.text = String(Int(weatherData.list[0].main["temp"]!)) + "°"
-        self.firstCityMinMaxLabel.text = "min " + String(Int(weatherData.list[0].main["temp_min"]!)) + "° / max " + String(Int(weatherData.list[0].main["temp_max"]!)) + "°"
+        self.firstCityMinMaxLabel.text = String(Int(weatherData.list[0].main["temp_min"]!)) + "° / " + String(Int(weatherData.list[0].main["temp_max"]!)) + "°"
         self.firstCityHumidityLabel.text = "humidité: " + String(Int(weatherData.list[0].main["humidity"]!)) + " %"
         self.firstCityWindSpeedLabel.text = "vent: " + String(Int(weatherData.list[0].wind["speed"]!)) + " km/h"
         self.firstCityImageView.image = UIImage(named: weatherData.list[0].weather[0].icon)
@@ -53,7 +53,7 @@ class WeatherViewController: UIViewController {
         
         self.secondCityLabel.text = weatherData.list[1].name
         self.secondCityTempLabel.text = String(Int(weatherData.list[1].main["temp"]!)) + "°"
-        self.secondCityMinMaxLabel.text = "min " + String(Int(weatherData.list[1].main["temp_min"]!)) + "° / max " + String(Int(weatherData.list[0].main["temp_max"]!)) + "°"
+        self.secondCityMinMaxLabel.text = String(Int(weatherData.list[1].main["temp_min"]!)) + "° / " + String(Int(weatherData.list[0].main["temp_max"]!)) + "°"
         self.secondCityHumidityLabel.text = "humidité: " + String(Int(weatherData.list[1].main["humidity"]!)) + " %"
         self.secondCityWindSpeedLabel.text = "vent: " + String(Int(weatherData.list[1].wind["speed"]!)) + " km/h"
         self.secondCityImageView.image = UIImage(named: weatherData.list[1].weather[0].icon)
