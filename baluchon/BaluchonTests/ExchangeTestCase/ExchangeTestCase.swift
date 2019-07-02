@@ -11,6 +11,8 @@ import XCTest
 
 class ExchangeTestCase: XCTestCase {
     
+    // MARK: getExchange Tests
+    
     func testGetExchangeShouldPostFailedCallbackIfError(){
         let exchangeService = ExchangeService(
             exchangeSession: URLSessionFake(data: nil, response: nil, error: ExchangeFakeResponseData.error))
@@ -18,36 +20,28 @@ class ExchangeTestCase: XCTestCase {
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         
         exchangeService.getExchange{ (success, exchange) in
-            // Then
             XCTAssertFalse(success)
             XCTAssertNil(exchange)
             expectation.fulfill()
-            
         }
         wait(for: [expectation], timeout: 0.01)
     }
+    
     func testGetExchangeShouldPostFailedCallbackIfNoData() {
-        // Given
         let exchangeService = ExchangeService(
             exchangeSession: URLSessionFake(data: nil, response: nil, error: nil))
         
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         
         exchangeService.getExchange{ (success, exchange) in
-            // Then
             XCTAssertFalse(success)
             XCTAssertNil(exchange)
             expectation.fulfill()
-            
         }
         wait(for: [expectation], timeout: 0.01)
-        
     }
     
-    
-    
     func testGetExchangeShouldPostFailedCallbackIfIncorrectResponse() {
-        // Given
         let exchangeService = ExchangeService(
             exchangeSession: URLSessionFake(
                 data: ExchangeFakeResponseData.exchangeCorrectData,
@@ -57,18 +51,14 @@ class ExchangeTestCase: XCTestCase {
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         
         exchangeService.getExchange{ (success, exchange) in
-            // Then
             XCTAssertFalse(success)
             XCTAssertNil(exchange)
             expectation.fulfill()
-            
         }
         wait(for: [expectation], timeout: 0.01)
-        
     }
     
     func testGetExchangeShouldPostFailedCallbackIfIncorrectData() {
-        // Given
         let exchangeService = ExchangeService(
             exchangeSession: URLSessionFake(
                 data: ExchangeFakeResponseData.exchangeIncorrectData,
@@ -78,18 +68,14 @@ class ExchangeTestCase: XCTestCase {
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         
         exchangeService.getExchange{ (success, exchange) in
-            // Then
             XCTAssertFalse(success)
             XCTAssertNil(exchange)
             expectation.fulfill()
-            
         }
         wait(for: [expectation], timeout: 0.01)
-        
     }
     
     func testGetExchangeShouldPostSuccessCallbackAndCorrectData(){
-        // Given
         let exchangeService = ExchangeService(
             exchangeSession: URLSessionFake(
                 data: ExchangeFakeResponseData.exchangeCorrectData,
@@ -102,18 +88,14 @@ class ExchangeTestCase: XCTestCase {
             
             XCTAssertTrue(success)
             XCTAssertNotNil(exchange)
-            
             XCTAssertEqual(["AED": 4.161051], exchange)
-            
             expectation.fulfill()
-//            "AED": 4.161051,
         }
         wait(for: [expectation], timeout: 0.01)
-
-            
     }
 
-    // getSymbolstests
+    // MAEK: getSymbols Tests
+    
     func testGetSymbolsShouldPostFailedCallbackIfError(){
         let exchangeService = ExchangeService(
             exchangeSession: URLSessionFake(data: nil, response: nil, error: ExchangeFakeResponseData.error))
@@ -121,36 +103,28 @@ class ExchangeTestCase: XCTestCase {
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         
         exchangeService.getSymbols{ (success, symbols) in
-            // Then
             XCTAssertFalse(success)
             XCTAssertNil(symbols)
             expectation.fulfill()
-            
         }
         wait(for: [expectation], timeout: 0.01)
     }
+    
     func testGetSymbolsShouldPostFailedCallbackIfNoData() {
-        // Given
         let exchangeService = ExchangeService(
             exchangeSession: URLSessionFake(data: nil, response: nil, error: nil))
         
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         
         exchangeService.getSymbols{ (success, symbols) in
-            // Then
             XCTAssertFalse(success)
             XCTAssertNil(symbols)
             expectation.fulfill()
-            
         }
         wait(for: [expectation], timeout: 0.01)
-        
     }
-    
-    
-    
+
     func testGetSymbolsShouldPostFailedCallbackIfIncorrectResponse() {
-        // Given
         let exchangeService = ExchangeService(
             exchangeSession: URLSessionFake(
                 data: ExchangeFakeResponseData.exchangeSymbolsCorrectData,
@@ -160,18 +134,14 @@ class ExchangeTestCase: XCTestCase {
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         
         exchangeService.getSymbols{ (success, symbols) in
-            // Then
             XCTAssertFalse(success)
             XCTAssertNil(symbols)
             expectation.fulfill()
-            
         }
         wait(for: [expectation], timeout: 0.01)
-        
     }
     
     func testGetSymbolsShouldPostFailedCallbackIfIncorrectData() {
-        // Given
         let exchangeService = ExchangeService(
             exchangeSession: URLSessionFake(
                 data: ExchangeFakeResponseData.exchangeSymbolsIncorrectData,
@@ -181,18 +151,14 @@ class ExchangeTestCase: XCTestCase {
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         
         exchangeService.getSymbols{ (success, symbols) in
-            // Then
             XCTAssertFalse(success)
             XCTAssertNil(symbols)
             expectation.fulfill()
-            
         }
         wait(for: [expectation], timeout: 0.01)
-        
     }
     
     func testGetSymbolsShouldPostSuccessCallbackAndCorrectData(){
-        // Given
         let exchangeService = ExchangeService(
             exchangeSession: URLSessionFake(
                 data: ExchangeFakeResponseData.exchangeSymbolsCorrectData,
@@ -205,17 +171,11 @@ class ExchangeTestCase: XCTestCase {
             
             XCTAssertTrue(success)
             XCTAssertNotNil(symbols)
-            
             XCTAssertEqual(["AED": "United Arab Emirates Dirham"], symbols)
-
             expectation.fulfill()
-            //            "AED": 4.161051,
         }
         wait(for: [expectation], timeout: 0.01)
-        
-        
     }
-   
 }
 
 

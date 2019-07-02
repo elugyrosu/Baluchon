@@ -8,7 +8,8 @@
 
 import Foundation
 
-import Foundation
+// get API Keys from ApiKeys.plist (git ignored) -> NS Dictionnary
+
 final class ApiKeysManager{
     
     private static var apiKeysPlist: NSDictionary = {

@@ -8,11 +8,14 @@
 
 import Foundation
 
+// Datas we want to decode from JSON (here the translated text, we have to respect JSON Structure
+
+// MARK: - TranslationData
 struct TranslationData: Decodable {
     let data: TranslationDataClass
 }
 
-// MARK: - DataClass
+// MARK: - TranslationDataClass
 struct TranslationDataClass: Decodable {
     let translations: [Translation]
 }

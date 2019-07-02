@@ -10,16 +10,16 @@ import Foundation
 
 final class WeatherService{
     
+// Get weather infos fot 2 citys (use citys id), one sesion, no request)
+    
     init(weatherSession: URLSession = URLSession(configuration: .default)){
         self.weatherSession = weatherSession
     }
-
     
     static let openWeatherMapApiUrl = "http://api.openweathermap.org/data/2.5/group?"
     
     private var weatherTask: URLSessionDataTask?
     private var weatherSession: URLSession
-    
     
     func getWeather(citysId: String, callback: @escaping (Bool, WeatherData?) -> Void){
         guard let url = URL(string: "\(WeatherService.openWeatherMapApiUrl)id=\(citysId)&units=metric&lang=fr&APPID=\(ApiKeysManager.openWeatherMapApiKey)") else{return}
@@ -49,6 +49,5 @@ final class WeatherService{
         }
         weatherTask?.resume()
     }
-
 }
 

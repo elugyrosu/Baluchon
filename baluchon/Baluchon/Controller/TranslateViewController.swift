@@ -8,8 +8,11 @@
 
 import UIKit
 
+// MARK: TranslateViewController
+
 final class TranslateViewController: UIViewController {
     
+    // MARK: Outlet connections
     @IBOutlet weak var originalLanguageButtonView: UIButton!
     @IBOutlet weak var originalLanguageTextView: UITextView!
     @IBOutlet weak var translateButton: UIButton!
@@ -17,13 +20,14 @@ final class TranslateViewController: UIViewController {
     @IBOutlet weak var translationLanguageTextField: UITextField!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
+    // Collection to set bordercorners
     @IBOutlet var views: [UIView]!
     
-    let translationLanguagePickerView = UIPickerView()
-    let translationService = TranslationService()
+    private let translationLanguagePickerView = UIPickerView()
+    private let translationService = TranslationService()
 
-    var pickerViewTranslationLanguages = [String]()
-    var translationLanguageSymbol = "EN"
+    private var pickerViewTranslationLanguages = [String]()
+    private var translationLanguageSymbol = "EN"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +38,7 @@ final class TranslateViewController: UIViewController {
     }
 
     @IBAction func originalLanguageButtonTapped() {
-        presentAlert(message: "Sorry but you cannot choose an other language source in this version")
+        presentAlert(message: "Malheureusement vous ne pouvez pas changer la langue d'origine dans cette version")
     }
     private func initializeLanguagesPickerView(){
         addPickerView()
@@ -49,7 +53,7 @@ final class TranslateViewController: UIViewController {
                 let ordered = self.pickerViewTranslationLanguages.sorted(by: <)
                 self.pickerViewTranslationLanguages = ordered
             }else{
-                self.presentAlert(message: "The symbols download failed.")
+                self.presentAlert(message: "Le téléchargement des langues disponibles a échoué")
             }
         }
     }
@@ -77,13 +81,16 @@ final class TranslateViewController: UIViewController {
         translationTextView.layer.borderWidth = 1
         translationTextView.layer.borderColor = #colorLiteral(red: 0.2297611833, green: 0.6683197618, blue: 0.7820833921, alpha: 1)
     }
+    
     private func toggleActivityIndicator(shown: Bool){
         activityIndicatorView.isHidden = shown
         translateButton.isHidden = !shown
     }
+    
     @IBAction func tappedTranslateButton() {
         translate()
     }
+
     private func translate(){
         toggleActivityIndicator(shown: false)
         translationService.getTranslation(translationLanguage: translationLanguageSymbol, textToTranslate: originalLanguageTextView.text){ (success, data) in
@@ -93,7 +100,7 @@ final class TranslateViewController: UIViewController {
                     self.translationTextView.text = translation.translatedText
                 }
             }else{
-                self.presentAlert(message: "The translation failed")
+                self.presentAlert(message: "La traduction a échoué")
             }
         }
     }

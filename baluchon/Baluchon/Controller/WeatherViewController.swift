@@ -8,7 +8,11 @@
 
 import UIKit
 
+// MARK: TranslateViewController
+
 final class WeatherViewController: UIViewController {
+    
+    // MARK: Outlet connections
 
     @IBOutlet weak var firstCityLabel: UILabel!
     @IBOutlet weak var firstCityTempLabel: UILabel!
@@ -25,6 +29,8 @@ final class WeatherViewController: UIViewController {
     @IBOutlet weak var secondCityWindSpeedLabel: UILabel!
     @IBOutlet weak var secondCityDescriptionLabel: UILabel!
     @IBOutlet weak var secondCityImageView: UIImageView!
+    
+    // Hide views when weather loading
     
     @IBOutlet weak var principalSlackView: UIStackView!
     @IBOutlet weak var weatherActivityIndicator: UIActivityIndicatorView!
@@ -66,7 +72,7 @@ final class WeatherViewController: UIViewController {
             if success, let data = data {
                 self.refreshViews(weatherData: data)
             }else{
-                self.presentAlert(message: "The weather data download failed")
+                self.presentAlert(message: "Le téléchargement des données météo a échoué")
             }
         }
     }

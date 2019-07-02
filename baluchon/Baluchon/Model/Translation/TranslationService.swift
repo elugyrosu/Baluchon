@@ -8,8 +8,10 @@
 
 import Foundation
 
-
 final class TranslationService{
+    
+// One session, getLanguages (languages list) with Get method (no request) et getTranslation (use POST method request)
+
     
     init(translateSession: URLSession = URLSession(configuration: .default)){
         self.translateSession = translateSession
@@ -20,7 +22,6 @@ final class TranslationService{
 
     private var translationTask: URLSessionDataTask?
     private var translateSession: URLSession
-
     
     func getLanguages(callback: @escaping (Bool, TranslateSymbolsDataClass?) -> Void){
         guard let url = languagesUrl else{return}
@@ -40,12 +41,12 @@ final class TranslationService{
                     callback(false, nil)
                     return
                 }
-                
                 callback(true, responseJSON.data)
             }
         }
         translationTask?.resume()
     }
+    
     func getTranslation(translationLanguage:String,textToTranslate: String, callback: @escaping (Bool, TranslationDataClass?) -> Void){
         guard let translateUrl = URL(string: "https://translation.googleapis.com/language/translate/v2/?")  else{return}
         var request = URLRequest(url: translateUrl)

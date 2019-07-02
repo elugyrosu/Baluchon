@@ -8,8 +8,11 @@
 
 import UIKit
 
+// MARK: ExchangeViewController
+
 final class ExchangeViewController: UIViewController {
     
+    // MARK: Outlet connections
     
     @IBOutlet weak var baseTextField: UITextField!
     @IBOutlet weak var baseButton: UIButton!
@@ -18,10 +21,10 @@ final class ExchangeViewController: UIViewController {
     @IBOutlet weak var exchangeLabel: UILabel!
     
     @IBAction func tapBaseButton() {
-        presentAlert(message: "You cannot change the base currency, EURO only available")
+        presentAlert(message: "Malheureusement vous ne pouvez pas changer la devise de base dans cette version")
     }
     
-
+    // Collection to set border corners
     @IBOutlet var views: [UIView]!
     
     
@@ -57,7 +60,7 @@ final class ExchangeViewController: UIViewController {
                 let ordered = self.pickerViewSymbols.sorted(by: <)
                 self.pickerViewSymbols = ordered
             }else{
-                self.presentAlert(message: "The symbols download failed.")
+                self.presentAlert(message: "Le téléchargement de la liste des devises a échoué")
             }
         }
     }
@@ -81,14 +84,14 @@ final class ExchangeViewController: UIViewController {
                 print(exchange)
                 self.updateRates()
             }else{
-                self.presentAlert(message: "The rates download failed.")
+                self.presentAlert(message: "Le téléchargement des taux de change a échoué")
             }
         }
     }
     
     private func updateRates(){
         guard let currency = currencyTextField.text, let rate = rates[currency] else{
-            presentAlert(message: "Unknown error")
+            presentAlert(message: "La mise à jour des taux de change a échoué")
             return
         }
         self.currency = currency
@@ -115,7 +118,7 @@ extension ExchangeViewController: UITextFieldDelegate {
 extension ExchangeViewController{
     @IBAction func tappedConvertButton() {
         guard baseTextField.text != nil else{
-            self.presentAlert(message: "Enter correct expression")
+            self.presentAlert(message: "Entrez une expresion correcte")
             return
         }
         exchangeLabel.text = String(calculate())
@@ -123,7 +126,7 @@ extension ExchangeViewController{
     private func calculate() -> Double{
         guard let baseText = baseTextField.text, let rate = rates[currency], let base = Double(baseText)
             else{
-                presentAlert(message: "Something wrong")
+                presentAlert(message: "Une erreur inattendue s'est produite")
                 return 0
         }
         return rate * base
@@ -131,7 +134,6 @@ extension ExchangeViewController{
 }
 
 // MARK: PickerView
-
 extension ExchangeViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

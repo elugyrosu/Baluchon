@@ -8,6 +8,9 @@
 
 import Foundation
 
+// Datas we want to decode from JSON (here all weather infos) we have to respect JSON Structure
+
+
 struct WeatherData: Decodable{
     let list: [List]
 }
@@ -17,8 +20,8 @@ struct List: Decodable {
     let weather: [Weather]
     let wind: [String:Double]
     let name: String
-    
 }
+
 struct Weather: Decodable{
     let main: String
     let description: String

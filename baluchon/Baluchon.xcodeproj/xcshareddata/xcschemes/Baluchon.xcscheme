@@ -33,59 +33,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FF5CC24022B3F9650020EB40"
+               BlueprintIdentifier = "FFE5268B22CA6C9E00943186"
                BuildableName = "BaluchonTests.xctest"
                BlueprintName = "BaluchonTests"
-               ReferencedContainer = "container:Baluchon.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FF5CC24022B3F9650020EB40"
-               BuildableName = "BaluchonTests.xctest"
-               BlueprintName = "BaluchonTests"
-               ReferencedContainer = "container:Baluchon.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FFD3ED3422B3F118002E501B"
-               BuildableName = "baluchonTests.xctest"
-               BlueprintName = "baluchonTests"
-               ReferencedContainer = "container:Baluchon.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FF5CC24E22B3FA5D0020EB40"
-               BuildableName = "ExchangeTest.xctest"
-               BlueprintName = "ExchangeTest"
-               ReferencedContainer = "container:Baluchon.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FFA4ACE222C10646008353CC"
-               BuildableName = "TranslationTestCase.xctest"
-               BlueprintName = "TranslationTestCase"
-               ReferencedContainer = "container:Baluchon.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FF5A688F22C3861F00BDCE77"
-               BuildableName = "WeatherTestCase.xctest"
-               BlueprintName = "WeatherTestCase"
                ReferencedContainer = "container:Baluchon.xcodeproj">
             </BuildableReference>
          </TestableReference>

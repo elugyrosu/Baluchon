@@ -8,16 +8,19 @@
 
 import Foundation
 
+// Datas we want to decode from JSON (here the languages list avilables from FR), we have to respect JSON Structure
+
+// MARK: - TranslationSymbols
 struct TranslationSymbols: Decodable {
     let data: TranslateSymbolsDataClass
 }
     
-    // MARK: - DataClass
+// MARK: - DataClass
 struct TranslateSymbolsDataClass: Decodable {
     let languages: [Language]
 }
     
-    // MARK: - Language
+// MARK: - Language
 struct Language: Decodable {
     let language, name: String
 }

@@ -8,6 +8,8 @@
 
 import Foundation
 
+// Datas we want to decode from JSON (here all rates from EURO)
+
 struct Exchange: Decodable {
     let rates: [String: Double]
 }
