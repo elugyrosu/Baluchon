@@ -30,8 +30,8 @@ final class WeatherViewController: UIViewController {
     @IBOutlet weak var secondCityDescriptionLabel: UILabel!
     @IBOutlet weak var secondCityImageView: UIImageView!
     
-    // Hide views when weather loading
-    
+    // to hide views during weather data download
+
     @IBOutlet weak var principalSlackView: UIStackView!
     @IBOutlet weak var weatherActivityIndicator: UIActivityIndicatorView!
     private let weatherService = WeatherService()

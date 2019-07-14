@@ -116,9 +116,9 @@
 		FF5A689122C3861F00BDCE77 /* WeatherTestCase */ = {
 			isa = PBXGroup;
 			children = (
-				FF5A689222C3861F00BDCE77 /* WeatherTestCase.swift */,
 				FF5A689A22C3866200BDCE77 /* Weather.json */,
 				FF5A689C22C3867E00BDCE77 /* WeatherFakeResponseData.swift */,
+				FF5A689222C3861F00BDCE77 /* WeatherTestCase.swift */,
 			);
 			path = WeatherTestCase;
 			sourceTree = "<group>";
@@ -126,9 +126,9 @@
 		FF5CC25022B3FA5D0020EB40 /* ExchangeTestCase */ = {
 			isa = PBXGroup;
 			children = (
+				FFED6B1A22B3C31E0045BC38 /* Exchange.json */,
 				FFED6B1822B3C2910045BC38 /* ExchangeSymbols.json */,
 				FFED6B3B22B3CCD80045BC38 /* ExchangeFakeResponseData.swift */,
-				FFED6B1A22B3C31E0045BC38 /* Exchange.json */,
 				FF5CC25122B3FA5D0020EB40 /* ExchangeTestCase.swift */,
 			);
 			path = ExchangeTestCase;
@@ -149,7 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				FFD7D9D422B3A54A00FBA008 /* Baluchon */,
-				FFE5268D22CA6C9E00943186 /* BaluchonTests */,
 				FFD7D9D322B3A54A00FBA008 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -169,13 +168,14 @@
 				FFD7D9FA22B3A72400FBA008 /* Model */,
 				FFED6B1722B3BAB40045BC38 /* View */,
 				FFD7D9F922B3A6F300FBA008 /* Controller */,
-				FFE5268522CA234700943186 /* Extensions */,
+				FFE5268D22CA6C9E00943186 /* BaluchonTests */,
 				FFD7D9F522B3A6A800FBA008 /* ApiKeys.plist */,
 				FFDB705422B559E9004FD4A2 /* ApiKeysManager.swift */,
 				FFD7D9E122B3A54B00FBA008 /* Info.plist */,
 				FFD7D9D522B3A54A00FBA008 /* AppDelegate.swift */,
 				FFD7D9DC22B3A54B00FBA008 /* Assets.xcassets */,
 				FFD7D9DE22B3A54B00FBA008 /* LaunchScreen.storyboard */,
+				FFE5268522CA234700943186 /* Extensions */,
 			);
 			path = Baluchon;
 			sourceTree = "<group>";
