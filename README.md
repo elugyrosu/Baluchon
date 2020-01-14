@@ -4,7 +4,7 @@ Baluchon est une application iOS contenant un convertisseur de devises, un tradu
 
 ## Architecture
 
-Baluchon a été écrit sous Xcode 11 en Swift 5 selon le pattern de conception MVC et supporte les iPhones en mode portrait à partir de iOS11
+Baluchon a été écrit sous Xcode en Swift 5 selon le pattern de conception MVC et supporte les iPhones en mode portrait à partir de iOS11
 
 - Appels réseau avec URLSession
 - Utilisation de PickerView, TextField, Stackview dans le StoryBoard avec AutoLayout.
